@@ -36,7 +36,7 @@ function [dim_Psi,eta,fm,h,u_a,bpt,d2,sigma,varepsilon,e,n_mu,n_u,n_t,lx,ly,rx,u
     tn=29; % total amount of time steps
 
     nsk = 3; % Gaussian quadrature rules of stiffness matrix
-    nsm = 3; % Gaussian quadrature rules of mass matrix
+    nsm = 4; % Gaussian quadrature rules of mass matrix
 
     run_max = 30; % maximum number of runs
 end
