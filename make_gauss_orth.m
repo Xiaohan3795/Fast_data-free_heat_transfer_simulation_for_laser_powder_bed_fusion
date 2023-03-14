@@ -1,4 +1,4 @@
-function [Q, pj_time] = make_gauss_orth(msh,utm1,rtm1,rt,ind,r,eta,u_pre,n_mu,um)
+function [Q, pj_time] = make_gauss_orth(msh,utm1,rtm1,rt,ind,r,eta,u_pre,n_mu,um,d2)
 
     tic;
     x0m1=rtm1(1); y0m1=rtm1(2); z0m1=rtm1(3);
@@ -48,7 +48,7 @@ function [Q, pj_time] = make_gauss_orth(msh,utm1,rtm1,rt,ind,r,eta,u_pre,n_mu,um
                     c=0.5/Sigs(3,jz)^2;
 
                     for imu = 0:n_mu-1
-                        Phi = [Phi, exp(-(a * (vtx_th_i(:,1) - (x0+imu)).^2 + ...
+                        Phi = [Phi, exp(-(a * (vtx_th_i(:,1) - (x0+imu*d2)).^2 + ...
                                 b * (vtx_th_i(:,2) - y0).^2 + ...
                                 c * (vtx_th_i(:,3) - z0).^2))];
                     end

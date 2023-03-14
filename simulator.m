@@ -47,7 +47,7 @@ for model_i = 1:2
 
             case 'SURROGATE'
                 % the generation of projection basis
-                [Psi, pj_time] = make_gauss_orth(msh,temp_S(bpv_dif,t),rts(t,:),rts(t+1,:),bpv_dif,dim_Psi,eta,temp_S(bpv_dif,t-(n_u-1):t),n_mu,um); 
+                [Psi, pj_time] = make_gauss_orth(msh,temp_S(bpv_dif,t),rts(t,:),rts(t+1,:),bpv_dif,dim_Psi,eta,temp_S(bpv_dif,t-(n_u-1):t),n_mu,um,d2); 
                 proj_basis_time(t+1) = pj_time;
 
                 % sketching and projection
@@ -136,6 +136,15 @@ for model_i = 1:2
     end
 end
        
+
+%%
+
+for i = 1:tn+1
+    figure(1);
+    cla; trisurf(msh.srf,msh.vtx(:,1),msh.vtx(:,2),msh.vtx(:,3),temp_FOM(:, i),'FaceAlpha',.9);
+    shading interp; daspect([1 1 1]); grid off; axis tight; colormap(turbo(25));colorbar;%view(0,90);
+    drawnow; pause(0.1);
+end
 
 
 %% 2 norm relative error of temperatures
