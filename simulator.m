@@ -137,14 +137,6 @@ for model_i = 1:2
 end
        
 
-%%
-
-for i = 1:tn+1
-    figure(1);
-    cla; trisurf(msh.srf,msh.vtx(:,1),msh.vtx(:,2),msh.vtx(:,3),temp_FOM(:, i),'FaceAlpha',.9);
-    shading interp; daspect([1 1 1]); grid off; axis tight; colormap(turbo(25));colorbar;%view(0,90);
-    drawnow; pause(0.1);
-end
 
 
 %% 2 norm relative error of temperatures
