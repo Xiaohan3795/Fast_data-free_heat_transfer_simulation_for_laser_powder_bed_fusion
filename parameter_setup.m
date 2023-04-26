@@ -1,7 +1,7 @@
 function [dim_Psi,eta,fm,h,u_a,bpt,d2,sigma,varepsilon,e,n_mu,n_u,n_t,lx,ly,rx,um,v,dt,dti,tn,nsk,nsm,run_max,sp,skm,skk,sks] = parameter_setup()
 
-    dim_Psi = 80; % the dimension of projection basis
-    eta = [0.5, 0.8, 1, 1.2, 1.5]; % the scale factor of the variances of Gaussian functions
+    dim_Psi = 40; % the dimension of projection basis
+    eta = [0.5, 1, 1.5]; % the scale factor of the variances of Gaussian functions
     
     sp = 0.6; % percentage of columns to approximate leverage scores
     
